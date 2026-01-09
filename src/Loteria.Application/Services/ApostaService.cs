@@ -74,7 +74,7 @@ public sealed class ApostaService : IApostaService
                 throw new ValidationException("QuantidadeDezenas não corresponde ao total de dezenas.");
             }
 
-            var invalidas = request.Dezenas.Where(d => d is < 1 or > 3).ToArray();
+            var invalidas = request.Dezenas.Where(d => d is < 1 or > 60).ToArray();
             if (invalidas.Length > 0)
             {
                 throw new ValidationException("Dezenas devem estar entre 1 e 60.");
